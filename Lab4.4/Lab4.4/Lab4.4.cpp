@@ -18,15 +18,22 @@ int main()
     a = pow(a, 2);
     b = pow(b, 2);
     int sum,r,pr,del;
-    sum = a + b;
-    r = a - b;
-    pr = a * b;
-    del = a / b;
-    printf("Сумма квадратов этих чисел: %d\n", sum);
-    printf("Разность квадратов этих чисел: %d\n", r);
-    printf("Произведение квадратов этих чисел: %d\n", pr);
-    printf("Частное квадратов этих чисел: %d\n", del);
-    system("pause");
+    if (a != 0 && b != 0)
+    {
+        sum = a + b;
+        r = a - b;
+        pr = a * b;
+        del = a / b;
+        printf("Сумма квадратов этих чисел: %d\n", sum);
+        printf("Разность квадратов этих чисел: %d\n", r);
+        printf("Произведение квадратов этих чисел: %d\n", pr);
+        printf("Частное квадратов этих чисел: %d\n", del);
+        system("pause");
+    }
+    else
+    {
+        printf("Введите ненулевые числа \n");
+    }
     return 0;
 }
 

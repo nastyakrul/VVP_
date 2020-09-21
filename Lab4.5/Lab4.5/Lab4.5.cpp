@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <stdlib.h>
+#include <locale.h>
 
 int main()
 {
@@ -16,14 +17,22 @@ int main()
     int m1 = abs(a);
     int m2 = abs(b);
     int sum,r,pr,del;
-    sum = m1 + m2;
-    r = m1 - m2;
-    pr = m1 * m2;
-    del = m1 / m2;
-    printf("Сумма модулей этих чисел: %d\n", sum);
-    printf("Разность модулей этих чисел: %d\n", r);
-    printf("Произведение модулей этих чисел: %d\n", pr);
-    printf("Частное модулей этих чисел: %d\n", del);
+    if (a != 0 && b != 0)
+    {
+        sum = m1 + m2;
+        r = m1 - m2;
+        pr = m1 * m2;
+        del = m1 / m2;
+        printf("Сумма модулей этих чисел: %d\n", sum);
+        printf("Разность модулей этих чисел: %d\n", r);
+        printf("Произведение модулей этих чисел: %d\n", pr);
+        printf("Частное модулей этих чисел: %d\n", del);
+    }
+    else
+    {
+        printf("Введите ненулевые числа \n");
+    }
+
     system("pause");
     return 0;
     
