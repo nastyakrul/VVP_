@@ -3,21 +3,19 @@
 
 #include <iostream>
 #include <stdlib.h>
-#include <stdio.h>
-double pi = 3.14;
+#include <locale.h>
+double pi = 3.14; //объявление глобальной переменной
 
 int main()
 {
-    system("chcp 1251"); // переходим в консоли на русский язык
-    system("cls");       // очищаем окно консоли
+    setlocale(LC_ALL, "Russian"); //установка русского языка
     int d;
     printf("Введите диаметр окружности: ");
-    scanf_s("%d", &d);
-    double l;
-    l = pi * d;
-    printf("Длина окружности: %lf\n", l);
+    scanf_s("%d", &d); //ввод с клавиатуры диаметра
+    double l; //ввод переменной длины окружности
+    l = pi * d; //расчет длины
+    printf("Длина окружности: %lf\n", l); //вывод на экран длины окружности
     system("pause");
-    return 0;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
