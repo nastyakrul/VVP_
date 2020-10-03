@@ -8,13 +8,14 @@
 int main()
 {
     setlocale(LC_ALL, "Russian"); //установка русского языка
-    int x1, x2, y1, y2, d, r, r1;
+    int x1, x2, y1, y2, r, r1;
+    double d;
     printf("Введите 4 координаты:");
     scanf_s("%d%d%d%d", &x1, &y1, &x2, &y2);
     r = x2 - x1;
     r1 = y2 - y1;
     d = sqrt(pow(r, 2) + pow(r1, 2));
-    printf("Расстояние между двумя точками будет =%d\n", d);
+    printf("Расстояние между двумя точками будет =%lf\n", d);
     system("pause");
 }
 
