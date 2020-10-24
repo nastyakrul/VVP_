@@ -2,10 +2,20 @@
 //
 
 #include <iostream>
+#include <locale.h>
+#include <stdio.h>
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    setlocale(LC_ALL, "Russian"); //установка русского языка
+    int x, d, e, y; //ввод переменных
+    printf("Введите двузначное число : ");//ввод с клавиатуры значения
+    scanf_s("%d", &x);
+    d = x / 10; //десятки
+    e = x % 10; //единицы
+    y = 10 * e + d; //новое число
+    printf("Новое число: %d\n", y); //вывод на экран значения
+    system("pause");
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
