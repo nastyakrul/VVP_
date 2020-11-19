@@ -2,10 +2,101 @@
 //
 
 #include <iostream>
+#include <locale.h>
+#include <stdio.h>
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    setlocale(LC_ALL, "Russian"); //установка русского языка
+    int x, c, j;//ввод переменных
+    printf("Введите год: ");//ввод с клавиатуры значения
+    scanf_s("%d", &x);
+    //1984 год — начало цикла
+    if (x > 1983)
+        x = (x - 1984) % 60 + 1;
+    else
+        x = 61 - (1984 - x) % 60; //отсчёт остатка идет в обратную сторону
+    /*один цвет длится 2 года:
+    1 и 2 - зеленый;
+    3 и 4 - красный;
+    5 и 6 - жёлтый; 
+    7 и 8 - белый; 
+    9 и 10 - черный.
+    Потом  цвета повторяются снова*/
+    c = (x - 1) % 10 / 2 + 1; //расчет номера цвета
+    j = (x - 1) % 12 + 1; // номер животного (всего их 12)
+    switch (c)
+    {
+    case 1:
+        printf("Год зелено");
+        break;
+    case 2:
+        printf("Год красно");
+        break;
+    case 3:
+        printf("Год желто");
+        break;
+    case 4:
+        printf("Год бело");
+        break;
+    case 5:
+        printf("Год черно");
+        break;
+    default:
+    {
+        printf("\nНеправильный ввод.\n"); //если введено число, неудовлетворяющее условию
+        return 0;
+    }
+    }
+    if ((j > 2) && (j < 6))
+        printf("го"); //годы тигра, зайца, дракона
+    else
+        printf("й"); //все остальные
+    switch (j)
+    {
+    case 1:
+        printf(" крысы\n");
+        break;
+    case 2:
+        printf(" коровы\n");
+        break;
+    case 3:
+        printf(" тигра\n");
+        break;
+    case 4:
+        printf(" зайца\n");
+        break;
+    case 5:
+        printf(" дракона\n");
+        break;
+    case 6:
+        printf(" змеи\n");
+        break;
+    case 7:
+        printf(" лошади\n");
+        break;
+    case 8:
+        printf(" овцы\n");
+        break;
+    case 9:
+        printf(" обезъяны\n");
+        break;
+    case 10:
+        printf(" курицы\n");
+        break;
+    case 11:
+        printf(" собаки\n");
+        break;
+    case 12:
+        printf(" свиньи\n");
+        break;
+    default:
+    {
+        printf("\nНеправильный ввод.\n"); //если введено число, неудовлетворяющее условию
+        return 0;
+    }
+    }
+    return 0;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
