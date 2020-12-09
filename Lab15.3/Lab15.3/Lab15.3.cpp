@@ -1,36 +1,11 @@
-﻿// Lab15.2.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// Lab15.3.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #include <iostream>
-#include <locale.h>
-#include <stdio.h>
-
-int Sign(double x) //ввод функции
-{
-    if (x < 0) //ввод условия
-        return -1; //возвращение какого-либо значения
-    else
-    {
-        if (x == 0)
-            return 0;
-        else 
-            return 1;
-    }
-}
 
 int main()
 {
-    setlocale(LC_ALL, "Russian"); //установка русского языка
-    double a, b;//ввод переменных
-    int sum;
-    printf("Введите A:"); //ввод с клавиатуры чисел
-    scanf_s("%lf", &a);
-    printf("Введите B:");
-    scanf_s("%lf", &b);
-    sum = Sign(a) + Sign(b); //вызов функции
-    printf("Sign(A) + Sign(B) = %d\n", sum); //вывод на экран значения
-    system("pause");
-    return(0);
+    std::cout << "Hello World!\n";
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
