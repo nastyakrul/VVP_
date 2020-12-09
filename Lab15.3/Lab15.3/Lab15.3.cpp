@@ -2,10 +2,42 @@
 //
 
 #include <iostream>
+#include <locale.h>
+#include <stdio.h>
+#include <math.h>
+
+const double pi = 3.14; //ввод постоянного значения
+
+double RingS(double r1, double r2) //ввод функции
+{
+    double s=0; //начальное значение
+        s = pi * (pow(r1, 2) - pow(r2, 2)); //вычисление площади
+    return s;
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    setlocale(LC_ALL, "Russian"); //установка русского языка
+    double r1, r2;//ввод переменных
+    for (int i = 1; i < 4; i++) //ввод цикла
+    {
+        printf("Введите R1:\n "); //ввод значений с клавиатуры
+        scanf_s("%lf", &r1);
+        printf("Введите R2:\n ");
+        scanf_s("%lf", &r2);
+        if (r1 > r2) //ввод условия
+        {
+            printf("Площадь кольца = %.2f\n", RingS(r1, r2)); //вывод на экран значения
+        }
+        else
+        {
+            printf("R1 должен быть больше R2\n"); //подсказка
+            system("pause");
+            return 0;
+        }
+    }
+    system("pause");
+    return(0);
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
